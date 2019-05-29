@@ -1,0 +1,1 @@
+from foo4 import bar
