@@ -12,7 +12,7 @@ class MyTestCase(unittest.TestCase):
 	def teatDown(self):
 		self.driver.quit()
 
-	def test_something(self):
+	def test_valid_login(self):
 		browser = self.driver
 		time.sleep(3)
 		browser.find_element_by_id('txtUsername').send_keys('admin')
