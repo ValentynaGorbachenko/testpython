@@ -1,4 +1,4 @@
-import unittest
+import unittest, time
 from selenium import webdriver
 
 class MyTestCase(unittest.TestCase):
@@ -14,13 +14,16 @@ class MyTestCase(unittest.TestCase):
 
 	def test_something(self):
 		browser = self.driver
+		time.sleep(3)
 		browser.find_element_by_id('txtUsername').send_keys('admin')
 		browser.find_element_by_id('txtPassword').send_keys('Password')
 		browser.find_element_by_id('btnLogin').click()
+		time.sleep(5)
 
 		greeting_text = browser.find_element_by_id('welcome').text
 
 		self.assertEqual(greeting_text, 'Welcome Admin')
+
 
 if __name__ == '__main__':
 	unittest.main()
